@@ -369,9 +369,8 @@ div.sticky.z-\[990\] a:hover {
   color: #991b1b !important;    /* Hover gets a darker red */
 }
 
-/* Active tab text & border-bottom color */
-div.sticky.z-\[990\] a.text-\[\#991b1b\],
-div.sticky.z-\[990\] a[class*="text-[#991b1b]"] {
+/* Active tab text & border-bottom color (matching by color hex substring in class string) */
+div.sticky.z-\[990\] a[class*="991b1b"] {
   color: #991b1b !important;    /* Dark red active tab state */
   border-bottom-color: #991b1b !important; /* Force show the border-bottom color for the active tab */
 }
