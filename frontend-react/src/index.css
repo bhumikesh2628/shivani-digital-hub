@@ -333,3 +333,15 @@ body {
   -webkit-backface-visibility: hidden;
   transform: translate3d(0, 0, 0);            /* Force hardware acceleration with crisp filtering */
 }
+
+/* Service Pages Hero section layout adjustments: shorten height and move content higher */
+section.pt-\[110px\] {
+  padding-top: 95px !important;
+}
+
+@media (min-width: 768px) {
+  section.pt-\[110px\] {
+    padding-top: 130px !important;
+    padding-bottom: 2rem !important;
+  }
+}
