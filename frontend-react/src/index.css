@@ -360,7 +360,9 @@ div.sticky.z-\[990\] a {
   font-size: 14.5px !important; /* Increase font size a little */
   color: #dc2626 !important;    /* Make text full red in color (red-600) */
   border-bottom-width: 2px !important;
+  border-bottom-style: solid !important;
   border-bottom-color: transparent !important;
+  text-decoration: none !important; /* Disable default browser underlines on all links */
 }
 
 div.sticky.z-\[990\] a:hover {
@@ -371,5 +373,5 @@ div.sticky.z-\[990\] a:hover {
 div.sticky.z-\[990\] a.text-\[\#991b1b\],
 div.sticky.z-\[990\] a[class*="text-[#991b1b]"] {
   color: #991b1b !important;    /* Dark red active tab state */
-  border-bottom-color: #991b1b !important;
+  border-bottom-color: #991b1b !important; /* Force show the border-bottom color for the active tab */
 }
