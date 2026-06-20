@@ -336,58 +336,40 @@ body {
 
 /* Service Pages Hero section layout adjustments: shorten height and move content higher */
 section.pt-\[110px\] {
-  padding-top: 80px !important; /* Mobile padding-top (shifted up from 95px) */
+  padding-top: 95px !important;
 }
 
-/* Align heading and content to the top instead of centering them vertically */
+/* Align service page hero content to the top of the section (instead of vertically centering) */
 section.pt-\[110px\] .grid.items-center {
   align-items: flex-start !important;
 }
 
 @media (min-width: 768px) {
   section.pt-\[110px\] {
-    padding-top: 95px !important;     /* Desktop padding-top (shifted up from 130px) */
-    padding-bottom: 1.5rem !important; /* Desktop padding-bottom (reduced from 2rem) */
+    padding-top: 130px !important;
+    padding-bottom: 2rem !important;
   }
 }
 
-/* Service Page Sticky Secondary Nav Bar tab adjustments */
-.sticky.z-\[990\] ul {
-  gap: 2.25rem !important; /* Increase gap between tabs */
+/* Secondary sticky sub-nav bar styling adjustments */
+div.sticky.z-\[990\] ul {
+  gap: 2.25rem !important; /* Increase gap between the words */
 }
 
-.sticky.z-\[990\] a {
-  font-size: 14.5px !important; /* Increase size a little */
-  color: #dc2626 !important; /* Make text full red in color */
-  font-weight: 700 !important; /* Keep it bold */
-  position: relative !important;
-  border-bottom: none !important; /* Remove static border */
-  padding-bottom: 6px !important;
+div.sticky.z-\[990\] a {
+  font-size: 14.5px !important; /* Increase font size a little */
+  color: #dc2626 !important;    /* Make text full red in color (red-600) */
+  border-bottom-width: 2px !important;
+  border-bottom-color: transparent !important;
 }
 
-/* Base state for the animated underline */
-.sticky.z-\[990\] a::after {
-  content: '' !important;
-  position: absolute !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 3px !important;
-  background-color: #991b1b !important; /* Active line color */
-  transform: scaleX(0) !important;
-  transform-origin: center !important;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  border-radius: 2px !important;
+div.sticky.z-\[990\] a:hover {
+  color: #991b1b !important;    /* Hover gets a darker red */
 }
 
-/* Active or Hover state triggers underline scale-up animation */
-.sticky.z-\[990\] a:hover::after,
-.sticky.z-\[990\] a[class*="text-[#991b1b]"]::after {
-  transform: scaleX(1) !important;
-}
-
-/* Keep the active/hover text color correct */
-.sticky.z-\[990\] a:hover,
-.sticky.z-\[990\] a[class*="text-[#991b1b]"] {
-  color: #991b1b !important;
+/* Active tab text & border-bottom color */
+div.sticky.z-\[990\] a.text-\[\#991b1b\],
+div.sticky.z-\[990\] a[class*="text-[#991b1b]"] {
+  color: #991b1b !important;    /* Dark red active tab state */
+  border-bottom-color: #991b1b !important;
 }
