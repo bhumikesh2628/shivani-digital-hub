@@ -43,8 +43,15 @@ export default function Footer() {
           {/* Top Row: Links and Description */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
             <div className="lg:col-span-1">
-              <div className="flex items-center gap-3 mb-6">
-                <img src="/logo-light.png" alt="Shivani Digital Hub Logo" className="h-[45px] w-auto object-contain drop-shadow-md" />
+              <div className="flex items-center gap-3 mb-6 select-none">
+                <div className="flex flex-col text-left leading-[0.8]">
+                  <span className="font-serif uppercase tracking-[1px] text-white text-[28px] sm:text-[32px]">
+                    Shivani
+                  </span>
+                  <span className="font-extrabold uppercase text-slate-300 tracking-[3.5px] mt-0.5 text-[9.5px] sm:text-[10.5px]">
+                    Legal Hub.
+                  </span>
+                </div>
               </div>
               <p className="text-[13px] text-slate-300 leading-relaxed mb-6">
                 {t('footerDesc')}

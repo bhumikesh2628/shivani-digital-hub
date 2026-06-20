@@ -1,5 +1,4 @@
 import { useLanguage } from '../context/LanguageContext'
-import LanguageToggle from './LanguageToggle'
 
 export default function Hero() {
   const { t, language } = useLanguage()
@@ -12,10 +11,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[82dvh] flex items-center bg-white py-14 sm:py-20 md:py-24 overflow-hidden z-10" id="home">
-      {/* Mobile Language Toggle */}
-      <div className="lg:hidden absolute top-4 right-4 z-20">
-        <LanguageToggle mobile={true} />
-      </div>
+
       {/* Hero background image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{ backgroundImage: `url(/hero-bg.webp)` }}>
         <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-transparent md:bg-gradient-to-r md:from-white/90 md:via-white/40 md:to-transparent"></div>
