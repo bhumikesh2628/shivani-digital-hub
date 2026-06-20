@@ -339,9 +339,31 @@ section.pt-\[110px\] {
   padding-top: 95px !important;
 }
 
+/* Align heading and content to the top instead of centering them vertically */
+section.pt-\[110px\] .grid.items-center {
+  align-items: flex-start !important;
+}
+
 @media (min-width: 768px) {
   section.pt-\[110px\] {
     padding-top: 130px !important;
     padding-bottom: 2rem !important;
   }
+}
+
+/* Service Page Sticky Secondary Nav Bar tab adjustments */
+.sticky.z-\[990\] ul {
+  gap: 2.25rem !important; /* Increase gap between tabs */
+}
+
+.sticky.z-\[990\] a {
+  font-size: 14.5px !important; /* Increase size a little */
+  color: #dc2626 !important; /* Make text full red in color */
+  font-weight: 700 !important; /* Keep it bold */
+}
+
+.sticky.z-\[990\] a:hover,
+.sticky.z-\[990\] a[class*="text-[#991b1b]"] {
+  color: #991b1b !important; /* Hover & active tab color: darker red */
+  border-bottom-color: #991b1b !important;
 }
