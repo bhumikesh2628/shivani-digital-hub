@@ -182,14 +182,7 @@ export default function Header() {
 
           {/* Logo */}
           <a href="/" className="flex items-center gap-1.5 sm:gap-3.5 no-underline shrink-0 py-2 -ml-2.5 sm:-ml-5 lg:-ml-8 transition-all duration-300 group animate-logo-slide" onClick={handleHome}>
-            <div className="flex flex-col text-left leading-[0.8] select-none">
-              <span className={`font-serif uppercase tracking-[1px] text-[#18181c] transition-all duration-300 group-hover:text-[#1a7a8a] ${scrolled ? 'text-[22px] sm:text-[24px]' : 'text-[28px] sm:text-[32px]'}`}>
-                Shivani
-              </span>
-              <span className={`font-extrabold uppercase text-slate-500 tracking-[3.5px] mt-0.5 transition-all duration-300 ${scrolled ? 'text-[7.5px] sm:text-[8.5px]' : 'text-[9.5px] sm:text-[10.5px]'}`}>
-                Legal Hub.
-              </span>
-            </div>
+            <img src="/logo.png" alt="Shivani Digital Hub Logo" className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 logo-sharp ${scrolled ? 'h-[26px] sm:h-[30px]' : 'h-[35px] sm:h-[40px]'}`} />
           </a>
 
           {/* Desktop Nav */}
