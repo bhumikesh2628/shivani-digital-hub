@@ -74,10 +74,10 @@ export const translations = {
     'Select Plan': 'Select Plan',
     
     // Hero Section Copy
-    heroLabel: "Govt. Recognized Corporate Advisor",
-    heroHeadingMain: "Corporate Filing & Legal Consultation",
-    heroHeadingHighlight: "Made Effortless.",
-    heroSub: "Empowering entrepreneurs with expert Chartered Accountants, Advocates, and Company Secretaries. Get certified registration, GST compliances, and legal advice in one unified platform.",
+    heroLabel: "Authorized Aadhaar & Digital Service Hub",
+    heroHeadingMain: "SHIVANI DIGITAL HUB",
+    heroHeadingHighlight: "Aadhaar Center in Manjalpur, Vadodara",
+    heroSub: "PRIVATE GOVERNMENT SERVICES: NEW AADHAR CARD (CORRECTION), Aadhaar Mobile Number Link, Aadhaar Address & Date of Birth Correction, NEW PAN CARD (CORRECTION), VOTER CARD (CORRECTION), ALL TYPES OF DIGITAL WORK, ITR FILING, RTO WORK, LOAN CONSULTANT, PF WITHDRAWAL, Pension Withdrawal, PF Death Claim, ESIC Cash Claim.",
     heroTalkBtn: "Talk to our Experts",
     heroExploreBtn: "Explore Services",
     heroBadge1: "10+ Years Professional Track Record",
@@ -247,10 +247,10 @@ export const translations = {
     'View Details': 'વિગતો જુઓ',
 
     // Hero Section Copy
-    heroLabel: 'સરકાર માન્ય કોર્પોરેટ સલાહકાર',
-    heroHeadingMain: 'કોર્પોરેટ ફાઇલિંગ અને કાનૂની પરામર્શ',
-    heroHeadingHighlight: 'સરળ બન્યું.',
-    heroSub: 'નિષ્ણાત ચાર્ટર્ડ એકાઉન્ટન્ટ્સ, વકીલો અને કંપની સેક્રેટરીઓ સાથે ઉદ્યોગસાહસિકોને સશક્તિકરણ કરવું. એક જ પ્લેટફોર્મ પર પ્રમાણિત નોંધણી, GST પાલન અને કાનૂની સલાહ મેળવો.',
+    heroLabel: "Authorized Aadhaar & Digital Service Hub",
+    heroHeadingMain: "SHIVANI DIGITAL HUB",
+    heroHeadingHighlight: "Aadhaar Center in Manjalpur, Vadodara",
+    heroSub: "PRIVATE GOVERNMENT SERVICES: NEW AADHAR CARD (CORRECTION), Aadhaar Mobile Number Link, Aadhaar Address & Date of Birth Correction, NEW PAN CARD (CORRECTION), VOTER CARD (CORRECTION), ALL TYPES OF DIGITAL WORK, ITR FILING, RTO WORK, LOAN CONSULTANT, PF WITHDRAWAL, Pension Withdrawal, PF Death Claim, ESIC Cash Claim.",
     heroTalkBtn: 'અમારા નિષ્ણાતો સાથે વાત કરો',
     heroExploreBtn: 'સેવાઓ શોધો',
     heroBadge1: '૧૦+ વર્ષનો વ્યાવસાયિક ટ્રેક રેકોર્ડ',
