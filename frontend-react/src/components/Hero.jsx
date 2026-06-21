@@ -32,7 +32,7 @@ export default function Hero() {
           </span>
 
           {/* Bold Blackstone Style Heading */}
-          <h1 className="text-3xl sm:text-5xl lg:text-[56px] font-black text-slate-900 leading-[1.12] tracking-tight font-poppins text-left">
+          <h1 className="text-2xl sm:text-4xl lg:text-[40px] font-black text-slate-900 leading-[1.18] tracking-tight font-poppins text-left">
             {t('heroHeadingMain')} <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-[#1a7a8a] to-[#0f4c5c] bg-clip-text text-transparent">
               {t('heroHeadingHighlight')}
@@ -40,7 +40,7 @@ export default function Hero() {
           </h1>
 
           {/* Body Paragraph */}
-          <p className="text-slate-600 text-sm sm:text-[16px] lg:text-lg max-w-[700px] leading-relaxed font-medium mt-6 text-left">
+          <p className="text-slate-600 text-xs sm:text-[14.5px] lg:text-[15.5px] max-w-[750px] leading-relaxed font-medium mt-4 text-left">
             {t('heroSub')}
           </p>
 
