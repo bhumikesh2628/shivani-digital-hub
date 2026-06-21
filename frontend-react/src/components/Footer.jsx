@@ -113,7 +113,7 @@ export default function Footer() {
             {/* Google Map Column */}
             <div className="lg:col-span-7 w-full h-[240px] rounded-xl overflow-hidden border border-white/10 shadow-md">
               <iframe 
-                src="https://maps.google.com/maps?q=5th%20Avenue,%20GF-12,%20Alwa%20Naka,%20GIDC%20Road,%20Manjalpur,%20Vadodara&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14769.094237965417!2d73.18555!3d22.267625!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc5762bcd5325%3A0xfa66221752e7db7!2sSHIVANI%20DIGITAL%20HUB!5e0!3m2!1sen!2sus!4v1782016510564!5m2!1sen!2sus" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
