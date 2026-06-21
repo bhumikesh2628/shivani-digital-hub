@@ -149,8 +149,11 @@ export default function TrademarkRenewal() {
                   Online Trademark Renewal Services
                 </h1>
 
-                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                   Renew your registered trademark online easily and securely. Prevent brand dilution, preserve your brand monopoly, and file Form TM-R on the IP India portal under professional attorney guidance.
+                </p>
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  Extend your brand name protection for another 10 years. We draft and file TM-R form on the trademark registry portal, upload ownership proofs, and ensure your trademark registration remains active and valid.
                 </p>
 
                 {/* Trust Badges */}

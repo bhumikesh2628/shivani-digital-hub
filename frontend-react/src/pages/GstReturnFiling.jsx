@@ -155,8 +155,11 @@ export default function GstReturnFiling() {
                     Online GST Return Filing Services
                   </h1>
 
-                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                     File your monthly or quarterly GST returns (GSTR-1, GSTR-3B, GSTR-9) with our experts. Get completely reconciled accounts, maximized Input Tax Credit, and zero late fees with Shivani Digital Hub.
+                  </p>
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                    Outsource your complex GST tax filings to our professional accountants. We reconcile your sales and purchase invoices (GSTR-2B matching) to maximize Input Tax Credit (ITC) and submit GSTR-1 & GSTR-3B filings accurately.
                   </p>
 
                   {/* Trust Badges */}

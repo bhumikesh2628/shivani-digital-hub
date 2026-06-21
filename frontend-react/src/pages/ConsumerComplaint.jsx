@@ -155,8 +155,11 @@ export default function ConsumerComplaint() {
                     Online Consumer Complaint & Legal Notice Filing
                   </h1>
 
-                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                     Submit your consumer complaint online. File your case in district, state, or national consumer forums. Resolve issues with defective products, poor services, and corporate fraud with Shivani Digital Hub.
+                  </p>
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                    Our legal team drafts formal legal notices and files petitions on the e-Daakhil portal. We track your case progression, handle hearing notices, and ensure that your consumer rights are strongly represented.
                   </p>
 
                   {/* Trust Badges */}

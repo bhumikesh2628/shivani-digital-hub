@@ -155,8 +155,11 @@ export default function TrademarkServices() {
                     Online Trademark Registration Services in India
                   </h1>
 
-                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                     Protect your Brand Name, Logo, and Slogan by doing trademark registration at nominal cost. Expert CA/CS drafting, TM-A filing, objection response, and renewals supported by Shivani Digital Hub.
+                  </p>
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                    Build a unique identity and prevent others from copying your business logo, name, or slogan. We conduct a free trademark search, identify correct classes, and file your TM application so you can use the ™ symbol immediately.
                   </p>
 
                   {/* Trust Badges */}

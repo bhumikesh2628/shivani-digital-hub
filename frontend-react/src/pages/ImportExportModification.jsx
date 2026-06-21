@@ -150,8 +150,11 @@ export default function ImportExportModification() {
                   Online IEC Modification & Update Services
                 </h1>
 
-                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                   Modify or update your active Import Export Code (IEC) certificate online with professional CA/CS legal assistance. Keep your trade records compliant, update business details, change directors, or change your address quickly on the DGFT portal.
+                </p>
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  Update your trade registration parameters seamlessly to avoid customs delay. We help you change your IEC address, update bank details, add/remove partners or directors, and issue the modified certificate.
                 </p>
 
                 {/* Trust Badges */}

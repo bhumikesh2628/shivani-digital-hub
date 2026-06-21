@@ -150,8 +150,11 @@ export default function FssaiRenewal() {
                   Online FSSAI License Renewal Services
                 </h1>
 
-                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                   Renew your FSSAI basic registration, state license, or central license online. Our expert legal team drafts your FSMS declaration plan, processes nominee files, and manages the entire renewal filing securely.
+                </p>
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  Prevent penalties and maintain business continuity by renewing your FSSAI license on time. We ensure the renewal application is filed before expiry, update business details if required, and secure your renewed certificate.
                 </p>
 
                 {/* Trust Badges */}

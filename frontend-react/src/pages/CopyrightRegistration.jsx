@@ -149,8 +149,11 @@ export default function CopyrightRegistration() {
                   Online Copyright Registration Services
                 </h1>
 
-                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                   Protect your intellectual creations legally. File your copyright application online for software, literature, artistic designs, music, and films under expert attorney guidance to secure lifetime brand ownership.
+                </p>
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  Establish legal ownership and prevent unauthorized reproduction of your original work. We assist in filing copyright applications with the registrar, responding to discrepancies, and acquiring the final Diary Number and Registration Certificate.
                 </p>
 
                 {/* Trust Badges */}

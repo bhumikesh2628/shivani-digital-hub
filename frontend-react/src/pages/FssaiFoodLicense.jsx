@@ -154,8 +154,11 @@ export default function FssaiFoodLicense() {
                   Online FSSAI Food License Registration in India
                 </h1>
 
-                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                   Get FSSAI Food License Certificate for your food business. Register online today under expert guidance by Shivani Digital Hub. Safe, certified, and compliant with zero hidden charges and government processing support.
+                </p>
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  FSSAI registration is mandatory for all food businesses to operate legally. We help identify the correct category (Basic, State, or Central) based on your turnover, draft your application, compile documents, and coordinate with food safety officers.
                 </p>
 
                 {/* Trust Badges */}

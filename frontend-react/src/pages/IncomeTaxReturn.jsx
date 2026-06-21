@@ -155,8 +155,11 @@ export default function IncomeTaxReturn() {
                     Online Income Tax Return (ITR) Filing Services
                   </h1>
 
-                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                     File Income Tax return online with us. Hassle-free process to file ITR, optimize tax savings, claim refunds, and carry forward capital losses under expert guidance from Shivani Digital Hub.
+                  </p>
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                    Plan and file your personal or corporate taxes with maximum efficiency. Our chartered accountants identify tax saving deductions (80C, 80D, etc.), file the correct ITR form, and expedite tax refund processing.
                   </p>
 
                   {/* Trust Badges */}

@@ -151,8 +151,11 @@ export default function NidhiCompany() {
                   Online Nidhi Company Registration Services
                 </h1>
 
-                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                   Register your Nidhi Company online easily and securely under Central Government regulations. Get custom-drafted mutual benefit rules, bylaws, name approval, DSC, DIN, and Certificate of Incorporation (COI) under our certified CA/CS assistance.
+                </p>
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  Launch a mutual benefit financial institution under MCA regulations. We manage your name registration, share capital allocation, drafting of MOA & AOA, DSC/DIN creation, and assist in meeting net owned fund compliances.
                 </p>
 
                 {/* Trust Badges */}

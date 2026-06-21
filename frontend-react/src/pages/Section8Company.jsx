@@ -151,8 +151,11 @@ export default function Section8Company() {
                   Online Section 8 Company Incorporation (Non-Profit NGO)
                 </h1>
 
-                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                   Incorporate your Section 8 NGO under complete professional guidance. Get name approval, Section 8 License (INC-12), drafting of MOA/AOA, DSC, DIN, and Tax-Exempt (12A & 80G) certification with zero hassle.
+                </p>
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  Establish a non-profit organization or foundation under corporate guidelines. We handle the Section 8 License application, draft charity-focused MOA/AOA, obtain DSC/DIN, and assist in 12A & 80G tax exemption registrations.
                 </p>
 
                 {/* Trust Badges */}

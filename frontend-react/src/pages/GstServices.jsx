@@ -155,8 +155,11 @@ export default function GstServices() {
                     Online GST Registration & Return Filing Services
                   </h1>
 
-                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                     Outsource your GST compliance to Shivani Digital Hub. Get expert help in fast GST Registration, ARN generation, GSTR-1, GSTR-3B, GSTR-9 annual return filings, and reconciliations with zero stress.
+                  </p>
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                    Complete your GST registration and ongoing compliances under one roof. We help you obtain your GSTIN, upload mandatory business details, and file your tax returns regularly with comprehensive ledger updates.
                   </p>
 
                   {/* Trust Badges */}

@@ -146,8 +146,11 @@ export default function ISOCertification() {
                     ISO Certification Services in India
                   </h1>
 
-                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                     Get ISO certified and enhance your business credibility! Our expert auditors provide end-to-end ISO certification support with transparent pricing and fast turnaround times. 5,000+ businesses trust Shivani Digital Hub for their ISO certification needs.
+                  </p>
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                    Enhance your business standards and build credibility in tenders and contracts. We assist in auditing, preparing Quality Manuals, implementing standards (ISO 9001, 14001, 27001), and securing the final certificate.
                   </p>
 
                   <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-5 mt-6 pt-6 border-t border-slate-200">

@@ -167,8 +167,11 @@ export default function SoleProprietorship() {
                     Online Sole Proprietorship Registration Services
                   </h1>
 
-                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                     Register your business as a sole proprietor and be your own boss from today. Quickest MSME Udyam, GST, and Trade License setup handled online by the expert CA/CS team at Shivani Digital Hub.
+                  </p>
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                    Start a small business or retail store quickly. We set up your MSME Udyam registration, file your GST application if required, assist with Shop & Establishment licenses, and verify your bank account documentation.
                   </p>
 
                   {/* Trust Badges */}

@@ -151,8 +151,11 @@ export default function OnePersonCompany() {
                   Online One Person Company (OPC) Registration
                 </h1>
 
-                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                   Register your One Person Company online. Maintain 100% ownership with complete private corporate protection. We manage your name reservation, nominee drafting (INC-3), DSC, DIN, and ROC incorporation seamlessly.
+                </p>
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  Start a corporate business as a sole founder with limited liability protection. We handle name registration, nominee consent documentation, DSC/DIN allocation, and complete ROC filing for a quick launch.
                 </p>
 
                 {/* Trust Badges */}

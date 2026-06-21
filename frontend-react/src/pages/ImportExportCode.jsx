@@ -155,8 +155,11 @@ export default function ImportExportCode() {
                     Online Import Export Code (IEC) Registration in India
                   </h1>
 
-                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                     Apply for IEC Registration and start your import-export business in 1 day. Directorate General of Foreign Trade (DGFT) government registration made easy with our expert team at Shivani Digital Hub. Get verified, hassle-free processing with zero hidden fees.
+                  </p>
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                    Unlock international markets with a lifetime valid Import Export Code. We file your application directly on the DGFT portal, upload bank and business proofs, and obtain your IEC certificate in a single day.
                   </p>
 
                   {/* Trust Badges */}

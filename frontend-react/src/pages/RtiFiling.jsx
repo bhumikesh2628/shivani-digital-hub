@@ -154,8 +154,11 @@ export default function RtiFiling() {
                     Online RTI Application & Appeal Filing Services
                   </h1>
 
-                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                     File RTI online and get details from any government department in India. We help you draft, identify correct public authorities, submit, and file Appeals under the RTI Act, 2005.
+                  </p>
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                    Exercise your constitutional right to information securely and easily. We draft precise queries, submit them online or offline to correct departments, and assist in filing first and second appeals if answers are delayed.
                   </p>
 
                   {/* Trust Badges */}

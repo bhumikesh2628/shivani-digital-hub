@@ -149,8 +149,11 @@ export default function EsicRegistration() {
                   Online ESIC Registration Services
                 </h1>
 
-                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                   Enroll your business under the ESI social security scheme online. Secure robust medical, maternity, and sickness coverage for your employees, and achieve 100% labor law compliance.
+                </p>
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  Provide essential healthcare benefits to your workforce through ESIC registration. We manage employer enrollment, employee sub-code generation, monthly contribution filings, and ensure ESIC compliance documentation is in place.
                 </p>
 
                 {/* Trust Badges */}

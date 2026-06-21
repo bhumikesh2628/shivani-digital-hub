@@ -154,8 +154,11 @@ export default function PrivateLimitedCompany() {
                   Online Private Limited Company Registration
                 </h1>
 
-                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                   Incorporate your dream startup legally as a Private Limited Company. Protect your personal assets with limited liability status, raise equity investments easily, and establish verified corporate credibility in India.
+                </p>
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  Get your DSC, DIN, PAN, TAN, and Certificate of Incorporation in 7-10 working days. Our experts handle the entire documentation, MCA filing, and SPICe+ form preparation, ensuring a smooth registration.
                 </p>
 
                 {/* Trust Badges */}

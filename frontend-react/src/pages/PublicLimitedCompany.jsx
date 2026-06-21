@@ -146,8 +146,11 @@ export default function PublicLimitedCompany() {
                     Online Public Limited Company Registration in India
                   </h1>
 
-                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                     Looking to register a Public Limited Company? Look no further! Our expert CS Assisted service offers the lowest cost with no hidden fees and a transparent pricing policy. Get fast turnaround times and hassle-free registration. 6,000+ startup business owners trust Shivani Digital Hub for starting their business and keeping it compliant with the law!
+                  </p>
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                    Establish a large-scale corporate entity capable of raising capital from the public. We manage your name reservation, coordinate minimum capital compliances, draft regulatory MOA/AOA, and secure your incorporation certificate.
                   </p>
 
                   {/* Trust Badges */}

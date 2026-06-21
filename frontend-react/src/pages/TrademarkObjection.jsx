@@ -149,8 +149,11 @@ export default function TrademarkObjection() {
                   Online Trademark Objection Reply Services
                 </h1>
 
-                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                   Draft and file a highly professional, legal objection reply on the IP India trademark portal. Address absolute grounds (Section 9) or relative grounds (Section 11) objections under professional attorney guidance.
+                </p>
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  Protect your brand from being rejected by the registry. Our experienced IP attorneys analyze the examination report, cite matching legal precedents, draft a robust response, and file it on the portal.
                 </p>
 
                 {/* Trust Badges */}

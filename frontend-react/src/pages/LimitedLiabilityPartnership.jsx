@@ -151,8 +151,11 @@ export default function LimitedLiabilityPartnership() {
                   Online LLP Registration & Incorporation Services
                 </h1>
 
-                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                   Register your Limited Liability Partnership (LLP) online under professional expert assistance. Get legally compliant drafting of your LLP Agreement, name approval, DSC, DPIN, and Incorporation Certificate under expert CA/CS guidance.
+                </p>
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  Incorporate a business with the combined benefits of a company and partnership. We assist in name reservation, DSC & DPIN creation, drafting a compliant LLP Agreement, and getting your certificate of incorporation.
                 </p>
 
                 {/* Trust Badges */}

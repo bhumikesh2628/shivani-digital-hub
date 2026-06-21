@@ -168,8 +168,11 @@ export default function EpfCompliances() {
                     Online EPF Registration & Monthly Return Filing
                   </h1>
 
-                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
                     Register your business under the Employees\' Provident Fund Act with ease. Streamline your monthly ECR filing, challan creation, labor compliances, and audits with the certified payroll experts at Shivani Digital Hub.
+                  </p>
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-5 font-medium">
+                    Stay fully compliant with EPF regulations and avoid heavy interest penalties. We handle your employee registration, monthly contribution calculations, ECR file generation, and provide timely updates on regulatory changes.
                   </p>
 
                   {/* Trust Badges */}
