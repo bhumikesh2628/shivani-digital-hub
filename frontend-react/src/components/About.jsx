@@ -8,6 +8,12 @@ export default function About() {
   const navigate = useNavigate()
   const location = useLocation()
 
+  const tabImages = {
+    'who-we-are': '/about-us.webp',
+    'our-aim': '/about-our-aim.webp',
+    'why-us': '/about-why-us.webp'
+  }
+
   const scrollTo = (e, href) => {
     e.preventDefault()
     if (location.pathname !== '/') {
@@ -215,13 +221,14 @@ export default function About() {
               {/* Premium Layered Frame with Organic Blob Shape */}
               <div 
                 className="relative overflow-hidden border-[6px] border-white shadow-[0_25px_60px_rgba(15,76,92,0.18)] bg-slate-50 group transition-all duration-500"
-                style={{ borderRadius: '30% 70% 70% 30% / 50% 30% 70% 50%' }}
+                style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
               >
                 <img
-                  src="/about-us.webp"
+                  src={tabImages[activeTab] || '/about-us.webp'}
                   alt="Shivani Digital Hub Legal &amp; Financial Advisory Team"
-                  className="w-full h-auto object-cover transform group-hover:scale-[1.03] transition-all duration-700 ease-out block"
-                  style={{ borderRadius: '30% 70% 70% 30% / 50% 30% 70% 50%' }}
+                  key={activeTab}
+                  className="w-full h-[240px] sm:h-[320px] object-cover transform group-hover:scale-[1.03] transition-all duration-700 ease-out block animate-fade-in"
+                  style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
                 />
                 
                 {/* Subtle Image Overlay */}
