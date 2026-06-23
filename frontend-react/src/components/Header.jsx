@@ -252,21 +252,21 @@ export default function Header() {
                 </li>
               ))}
 
-              {/* Contact Us */}
-              <li className="relative group">
-                <a
-                  href="/#contact"
-                  className={`flex items-center gap-1.5 px-3.5 text-[14px] font-semibold whitespace-nowrap relative transition-all duration-300 ${scrolled ? 'h-[56px]' : 'h-[74px]'} ${isHome && activeSection === 'contact' ? 'text-[#0f4c5c] after:scale-x-100' : 'text-[#222] hover:text-[#0f4c5c] group-hover:text-[#0f4c5c] after:scale-x-0 group-hover:after:scale-x-100'} after:content-[''] after:absolute after:bottom-0 after:left-3.5 after:right-3.5 after:h-[3px] after:bg-[#f0c040] after:rounded-t-sm after:origin-center after:transition-transform after:duration-200`}
-                  onClick={e => handleNav(e, '/#contact')}
-                >
-                  {t('Contact Us')}
-                </a>
-              </li>
             </ul>
           </nav>
 
-          {/* Hamburger controls */}
+          {/* Desktop Contact Button & Mobile Hamburger controls */}
           <div className="flex items-center gap-3.5">
+            {/* Desktop Contact Button */}
+            <a
+              href="/#contact"
+              onClick={e => handleNav(e, '/#contact')}
+              className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white hover:bg-[#1a1a1a] transition-all duration-200 text-[14px] font-bold rounded-lg no-underline shadow-[0_2px_8px_rgba(0,0,0,0.08)] cursor-pointer"
+            >
+              <i className="fab fa-whatsapp text-white text-[16px]"></i>
+              <span>{t('Contact')}</span>
+            </a>
+
             {/* Hamburger */}
             <button
               className="lg:hidden flex flex-col justify-center gap-1.5 bg-transparent border-none cursor-pointer p-1.5 w-9 h-9 z-[1001]"
