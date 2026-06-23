@@ -13,7 +13,7 @@ export default function Hero() {
     <section className="relative min-h-[82dvh] flex items-center bg-white py-14 sm:py-20 md:py-24 overflow-hidden z-10" id="home">
 
       {/* Hero background image */}
-      <div className="absolute inset-0 bg-cover md:bg-right bg-center bg-no-repeat z-0" style={{ backgroundImage: `url(/hero-bg.png)` }}>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{ backgroundImage: `url(/hero-bg.webp)` }}>
         <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-transparent md:bg-gradient-to-r md:from-white/90 md:via-white/40 md:to-transparent"></div>
       </div>
 
