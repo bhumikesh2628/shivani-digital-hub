@@ -374,3 +374,19 @@ div.sticky.z-\[990\] a[class*="991b1b"] {
   color: #991b1b !important;    /* Dark red active tab state */
   border-bottom-color: #991b1b !important; /* Force show the border-bottom color for the active tab */
 }
+
+/* Infinite Scrolling Marquee Animation (Left-to-Right) */
+@keyframes marquee-reverse {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 42s linear infinite;
+}
+
+.marquee-wrapper:hover .animate-marquee-reverse {
+  animation-play-state: paused;
+}
