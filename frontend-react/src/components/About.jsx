@@ -212,12 +212,16 @@ export default function About() {
             {/* Graphic Container */}
             <div className="relative mx-auto max-w-[480px] lg:max-w-full">
               
-              {/* Premium Layered Frame */}
-              <div className="relative overflow-hidden rounded-2xl border-[6px] border-white shadow-[0_25px_60px_rgba(15,76,92,0.18)] bg-slate-50 group">
+              {/* Premium Layered Frame with Organic Blob Shape */}
+              <div 
+                className="relative overflow-hidden border-[6px] border-white shadow-[0_25px_60px_rgba(15,76,92,0.18)] bg-slate-50 group transition-all duration-500"
+                style={{ borderRadius: '30% 70% 70% 30% / 50% 30% 70% 50%' }}
+              >
                 <img
                   src="/about-us.webp"
                   alt="Shivani Digital Hub Legal &amp; Financial Advisory Team"
                   className="w-full h-auto object-cover transform group-hover:scale-[1.03] transition-all duration-700 ease-out block"
+                  style={{ borderRadius: '30% 70% 70% 30% / 50% 30% 70% 50%' }}
                 />
                 
                 {/* Subtle Image Overlay */}
