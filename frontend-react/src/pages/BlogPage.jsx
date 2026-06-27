@@ -1,7 +1,5 @@
 import { useEffect } from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Blog from '../components/Blog'
+import { Header, Footer, Blog } from '../components'
 
 export default function BlogPage() {
   useEffect(() => {

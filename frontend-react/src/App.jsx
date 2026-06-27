@@ -1,15 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect, lazy, Suspense } from 'react'
 import useScrollReveal from './hooks/useScrollReveal'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Services from './components/Services'
-import About from './components/About'
-import WhyUs from './components/WhyUs'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import FloatingButtons from './components/FloatingButtons'
-import LiveChat from './components/LiveChat'
+import { Header, Hero, Services, About, WhyUs, Contact, Footer, FloatingButtons, LiveChat } from './components'
 
 // Lazy-load page components to resolve the Vite large chunk warning and optimize load times
 const PrivateLimitedCompany = lazy(() => import('./pages/PrivateLimitedCompany'))
