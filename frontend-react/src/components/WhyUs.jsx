@@ -73,78 +73,37 @@ export default function WhyUs() {
           </p>
         </div>
 
-        {/* Infinite Horizontal Scrolling Marquee Slider (Left-to-Right) */}
-        <div 
-          className="relative w-full overflow-hidden py-6"
-          style={{
-            maskImage: 'linear-gradient(to right, transparent, white 10%, white 90%, transparent)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent, white 10%, white 90%, transparent)'
-          }}
-        >
-          <div className="marquee-wrapper flex w-max">
-            <div className="animate-marquee-reverse flex gap-6 pr-6 shrink-0">
-              {pillars.map(({ img, title, desc }, index) => (
-                <div 
-                  key={`${title}-${index}-1`}
-                  className="w-[280px] sm:w-[340px] shrink-0 bg-white rounded-2xl border border-slate-100 p-4 sm:p-5 shadow-[0_4px_25px_rgba(0,0,0,0.02)] flex items-start gap-4 transition-all duration-300 hover:shadow-[0_12px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 group cursor-default relative overflow-hidden"
-                >
-                  {/* Left: Icon/Logo container */}
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-slate-50 flex items-center justify-center shrink-0 p-2 sm:p-2.5 border border-slate-100 group-hover:bg-[#f0c040]/10 transition-colors duration-300">
-                    <img 
-                      src={img} 
-                      alt={t(title)} 
-                      loading="lazy" 
-                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" 
-                    />
-                  </div>
-                  
-                  {/* Right: Text Details */}
-                  <div className="flex flex-col text-left">
-                    <h3 className="text-[12.5px] sm:text-[13.5px] font-bold text-slate-800 mb-1 hover:text-[#1a7a8a] transition-colors duration-300 font-poppins leading-tight line-clamp-1">
-                      {t(title)}
-                    </h3>
-                    <p className="text-slate-500 text-[11px] sm:text-[11.5px] leading-relaxed m-0 line-clamp-2">
-                      {t(desc)}
-                    </p>
-                  </div>
-                  
-                  {/* Bottom accent hover bar */}
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#f0c040] origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                </div>
-              ))}
+        {/* Cohesive, Human-Crafted Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {pillars.map(({ img, title, desc }, index) => (
+            <div 
+              key={title}
+              className={`bg-white rounded-2xl border border-slate-100 flex flex-col sm:flex-row overflow-hidden min-h-[180px] transition-all duration-300 hover:shadow-[0_15px_40px_rgba(0,0,0,0.04)] hover:-translate-y-1 relative group hover-lift animate-fade-in stagger-${(index % 5) + 1}`}
+            >
+              {/* Left half on desktop / Top half on mobile: Image/logo block */}
+              <div className="w-full sm:w-1/2 shrink-0 bg-slate-50 flex items-center justify-center p-5 border-b sm:border-b-0 sm:border-r border-slate-100/50 relative overflow-hidden group-hover:bg-[#f0c040]/5 transition-colors duration-300">
+                <img 
+                  src={img} 
+                  alt={t(title)} 
+                  loading="lazy" 
+                  className="w-full h-full max-h-[75px] sm:max-h-[85px] object-contain transition-transform duration-500 group-hover:scale-105" 
+                />
+              </div>
+              
+              {/* Right half on desktop / Bottom half on mobile: Text Content */}
+              <div className="w-full sm:w-1/2 p-5 flex flex-col justify-center text-left">
+                <h3 className="text-[13px] sm:text-[14px] font-bold text-black mb-2 hover:text-[#1a7a8a] transition-colors duration-300 font-poppins leading-tight">
+                  {t(title)}
+                </h3>
+                <p className="text-black text-[11.5px] sm:text-xs leading-relaxed mb-0">
+                  {t(desc)}
+                </p>
+              </div>
+
+              {/* Sophisticated bottom border visual hover effect */}
+              <div className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#f0c040] origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
             </div>
-            <div className="animate-marquee-reverse flex gap-6 pr-6 shrink-0">
-              {pillars.map(({ img, title, desc }, index) => (
-                <div 
-                  key={`${title}-${index}-2`}
-                  className="w-[280px] sm:w-[340px] shrink-0 bg-white rounded-2xl border border-slate-100 p-4 sm:p-5 shadow-[0_4px_25px_rgba(0,0,0,0.02)] flex items-start gap-4 transition-all duration-300 hover:shadow-[0_12px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 group cursor-default relative overflow-hidden"
-                >
-                  {/* Left: Icon/Logo container */}
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-slate-50 flex items-center justify-center shrink-0 p-2 sm:p-2.5 border border-slate-100 group-hover:bg-[#f0c040]/10 transition-colors duration-300">
-                    <img 
-                      src={img} 
-                      alt={t(title)} 
-                      loading="lazy" 
-                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" 
-                    />
-                  </div>
-                  
-                  {/* Right: Text Details */}
-                  <div className="flex flex-col text-left">
-                    <h3 className="text-[12.5px] sm:text-[13.5px] font-bold text-slate-800 mb-1 hover:text-[#1a7a8a] transition-colors duration-300 font-poppins leading-tight line-clamp-1">
-                      {t(title)}
-                    </h3>
-                    <p className="text-slate-500 text-[11px] sm:text-[11.5px] leading-relaxed m-0 line-clamp-2">
-                      {t(desc)}
-                    </p>
-                  </div>
-                  
-                  {/* Bottom accent hover bar */}
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#f0c040] origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
 
       </div>

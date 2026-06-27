@@ -47,7 +47,7 @@ function PageWrapper({ children }) {
   const location = useLocation()
   
   // Register scroll reveal globally for all card and container selectors on every route change!
-  useScrollReveal('.svc-card, .why-card, .about-left, .about-right, .footer-col, .reveal-card, .reveal-item', location.pathname)
+  useScrollReveal('.svc-card, .why-card, .about-left, .about-right, .footer-col, .reveal-card, .reveal-item, #process div[class*="border-l-2"] > div', location.pathname)
 
   useEffect(() => {
     // Reset scroll position instantly on page change to avoid timing issues with animations

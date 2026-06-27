@@ -177,7 +177,7 @@ export default function Header() {
 
   return (
     <>
-      <header ref={headerRef} className={`bg-white sticky top-0 z-[1000] transition-all duration-300 border-b ${scrolled ? 'border-slate-200/80 shadow-sm' : 'border-slate-100/50 shadow-[0_2px_15px_rgba(0,0,0,0.01)]'}`} id="header">
+      <header ref={headerRef} className={`sticky top-0 z-[1000] transition-all duration-300 border-b ${scrolled ? 'bg-white/80 backdrop-blur-md border-slate-200/80 shadow-sm' : 'bg-white border-slate-100/50 shadow-[0_2px_15px_rgba(0,0,0,0.01)]'}`} id="header">
         <div className={`w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between relative transition-all duration-300 ${scrolled ? 'h-[56px]' : 'h-[74px]'}`}>
 
           {/* Logo */}

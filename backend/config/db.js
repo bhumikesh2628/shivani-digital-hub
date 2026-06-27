@@ -13,9 +13,9 @@ const connectDB = async (retries = 5, delay = 5000) => {
         await new Promise(res => setTimeout(res, delay));
       } else {
         console.error('======================================================================');
-        console.error('WARNING: Could not connect to MongoDB after maximum retries.');
-        console.error('The server will continue running, but database features will fail.');
+        console.error('CRITICAL ERROR: Could not connect to MongoDB after maximum retries.');
         console.error('======================================================================');
+        throw new Error('Database connection failed after maximum retries');
       }
     }
   }

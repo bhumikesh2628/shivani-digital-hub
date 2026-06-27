@@ -375,18 +375,85 @@ div.sticky.z-\[990\] a[class*="991b1b"] {
   border-bottom-color: #991b1b !important; /* Force show the border-bottom color for the active tab */
 }
 
-/* Infinite Scrolling Marquee Animation (Left-to-Right) */
-@keyframes marquee-reverse {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(0); }
+/* ── Glassmorphic Header & Backdrop Blur ── */
+.bg-white\/80 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
 
-.animate-marquee-reverse {
-  display: flex;
-  width: max-content;
-  animation: marquee-reverse 42s linear infinite;
+.backdrop-blur-md {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
 
-.marquee-wrapper:hover .animate-marquee-reverse {
-  animation-play-state: paused;
+/* ── Interactive Process Timeline ── */
+#process div[class*="border-l-2"] {
+  position: relative;
+  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+#process div[class*="border-l-2"]:hover {
+  border-color: #0d9488 !important; /* teal-600 brand color */
+}
+
+/* Individual Step Container */
+#process div[class*="border-l-2"] > div {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.85;
+  transform: translateX(0);
+}
+
+#process div[class*="border-l-2"] > div:hover {
+  opacity: 1;
+  transform: translateX(8px);
+}
+
+/* The Step Badge/Dot */
+#process div[class*="border-l-2"] > div > div[class*="absolute"] {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 0 0px rgba(13, 148, 136, 0.2);
+}
+
+#process div[class*="border-l-2"] > div:hover > div[class*="absolute"] {
+  background-color: #0d9488 !important; /* Teal-600 */
+  color: #ffffff !important;
+  box-shadow: 0 0 0 6px rgba(13, 148, 136, 0.25);
+  transform: scale(1.15);
+}
+
+/* Highlight the active/hovered step title in brand teal */
+#process div[class*="border-l-2"] > div:hover h4 {
+  color: #0d9488 !important; /* teal-600 / brand emerald */
+}
+
+#process div[class*="border-l-2"] > div:hover ul {
+  color: #0f172a !important; /* darker slate text */
+}
+
+/* Scroll Reveal Timeline Connection */
+#process div[class*="border-l-2"] > div.reveal-visible > div[class*="absolute"] {
+  animation: pulseTeal 1.5s ease-out;
+}
+
+@keyframes pulseTeal {
+  0% {
+    box-shadow: 0 0 0 0px rgba(13, 148, 136, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgba(13, 148, 136, 0);
+  }
+}
+
+/* Exempt Google Maps redirection button from general white-footer-links rule */
+footer a.map-btn,
+footer a.map-btn span {
+  color: #1e293b !important;
+}
+
+footer a.map-btn:hover,
+footer a.map-btn:hover span {
+  color: #0f172a !important;
+}
+

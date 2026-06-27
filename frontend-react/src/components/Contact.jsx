@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { validateContactForm } from '../utils/validation'
 import { useLanguage } from '../context/LanguageContext'
 
@@ -16,6 +16,25 @@ export default function Contact() {
   const [form, setForm] = useState(init)
   const [msg, setMsg] = useState({ text: '', ok: false })
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const urlName = params.get('name') || ''
+    const urlEmail = params.get('email') || ''
+    const urlPhone = params.get('phone') || ''
+    const urlService = params.get('service') || ''
+    const urlMessage = params.get('message') || ''
+    if (urlName || urlEmail || urlPhone || urlService || urlMessage) {
+      setForm(prev => ({
+        ...prev,
+        name: urlName || prev.name,
+        email: urlEmail || prev.email,
+        phone: urlPhone || prev.phone,
+        service: urlService || prev.service,
+        message: urlMessage || prev.message
+      }))
+    }
+  }, [])
 
   const onChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 

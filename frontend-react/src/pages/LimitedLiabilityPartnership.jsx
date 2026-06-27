@@ -47,10 +47,27 @@ export default function LimitedLiabilityPartnership() {
   useScrollReveal('.reveal-card')
 
   const [form, setForm] = useState(init)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const urlName = params.get('name') || ''
+    const urlEmail = params.get('email') || ''
+    const urlPhone = params.get('phone') || ''
+    const urlState = params.get('state') || ''
+    if (urlName || urlEmail || urlPhone || urlState) {
+      setForm(prev => ({
+        ...prev,
+        name: urlName || prev.name,
+        email: urlEmail || prev.email,
+        phone: urlPhone || prev.phone,
+        state: urlState || prev.state
+      }))
+    }
+  }, [])
   const [msg, setMsg] = useState({ text: '', ok: false })
   const [loading, setLoading] = useState(false)
   const [activeTab, setActiveTab] = useState('overview')
   const [openFaq, setOpenFaq] = useState(null)
+  const [faqSearch, setFaqSearch] = useState('')
   const [scrolled, setScrolled] = useState(false)
 
   const onChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
@@ -192,9 +209,9 @@ export default function LimitedLiabilityPartnership() {
                   <form onSubmit={onSubmit} className="space-y-3">
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('First Name')}</label>
+                        <label htmlFor="first_name" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('First Name')}</label>
                         <input 
-                          name="name" 
+                          id="first_name" name="name" 
                           value={form.name.split(' ')[0] || ''} 
                           onChange={e => {
                             const val = e.target.value
@@ -210,9 +227,9 @@ export default function LimitedLiabilityPartnership() {
                         />
                       </div>
                       <div>
-                        <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Last Name')}</label>
+                        <label htmlFor="last_name" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Last Name')}</label>
                         <input 
-                          name="lastname" 
+                          id="last_name" name="lastname" 
                           value={form.lastname !== undefined ? form.lastname : (form.name.split(' ').slice(1).join(' ') || '')} 
                           placeholder={t('Last Name')} 
                           required 
@@ -229,13 +246,13 @@ export default function LimitedLiabilityPartnership() {
                     </div>
 
                     <div>
-                      <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Mobile Number')}</label>
+                      <label htmlFor="mobile_number" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Mobile Number')}</label>
                       <div className="flex gap-2">
                         <div className="px-3 py-3 sm:px-2.5 sm:py-2 border border-slate-200 rounded-lg bg-slate-50 flex items-center gap-1 text-slate-500 text-sm font-semibold select-none">
                           <span className="text-[10px] font-bold">IN</span> <span>+91</span>
                         </div>
                         <input 
-                          name="phone" 
+                          id="mobile_number" name="phone" 
                           value={form.phone} 
                           onChange={onChange} 
                           placeholder={t('Enter Phone')} 
@@ -247,9 +264,9 @@ export default function LimitedLiabilityPartnership() {
                     </div>
 
                     <div>
-                      <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Email Address')}</label>
+                      <label htmlFor="email_address" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Email Address')}</label>
                       <input 
-                        name="email" 
+                        id="email_address" name="email" 
                         type="email" 
                         value={form.email} 
                         onChange={onChange} 
@@ -260,9 +277,9 @@ export default function LimitedLiabilityPartnership() {
                     </div>
 
                     <div>
-                      <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Select State')}</label>
+                      <label htmlFor="state_select" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Select State')}</label>
                       <select 
-                        name="state" 
+                        id="state_select" name="state" 
                         value={form.state} 
                         onChange={onChange} 
                         required 
@@ -334,6 +351,32 @@ export default function LimitedLiabilityPartnership() {
               <span className="text-xs sm:text-sm font-extrabold tracking-[2px] uppercase text-[#d97706]">Introduction</span>
               <h2 className="text-2xl sm:text-3.5xl font-poppins font-extrabold text-slate-900 mt-2 tracking-tight">Understanding Limited Liability Partnership (LLP)</h2>
               <div className="w-16 h-1 bg-[#f0c040] mx-auto rounded-full mt-4"></div>
+              
+              {/* FAQ Live Search Bar */}
+              <div className="max-w-md mx-auto relative mt-6">
+                <input 
+                  type="text"
+                  value={faqSearch}
+                  onChange={e => {
+                    setFaqSearch(e.target.value)
+                    setOpenFaq(null)
+                  }}
+                  placeholder={t("🔍 Search FAQs (e.g., DIN, GST, documents)...")}
+                  className="w-full px-5 py-2.5 pl-11 text-xs sm:text-sm bg-white border border-slate-200 rounded-full focus:outline-none focus:border-[#991b1b] focus:ring-1 focus:ring-[#991b1b] transition-all shadow-sm text-slate-800 placeholder-slate-400"
+                />
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xs">
+                  <i className="fas fa-search"></i>
+                </div>
+                {faqSearch && (
+                  <button 
+                    type="button"
+                    onClick={() => setFaqSearch('')}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-xs cursor-pointer border-none bg-transparent"
+                  >
+                    <i className="fas fa-times-circle"></i>
+                  </button>
+                )}
+              </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-12 text-left space-y-6">
@@ -542,7 +585,10 @@ export default function LimitedLiabilityPartnership() {
               <div className="w-16 h-1 bg-[#f0c040] mx-auto rounded-full mt-4"></div>
             </div>
             <div className="space-y-4 text-left">
-              {faqsList.map(({ q, a }, idx) => {
+              {(faqSearch && faqsList.filter(f => f.q.toLowerCase().includes(faqSearch.toLowerCase()) || f.a.toLowerCase().includes(faqSearch.toLowerCase())).length === 0) && (
+                <div className="text-center py-8 text-slate-400 text-xs sm:text-sm">No matches found for "{faqSearch}"</div>
+              )}
+              {((faqSearch ? faqsList.filter(f => f.q.toLowerCase().includes(faqSearch.toLowerCase()) || f.a.toLowerCase().includes(faqSearch.toLowerCase())) : faqsList)).map(({ q, a }, idx) => {
                 const isOpen = openFaq === idx
                 return (
                   <div key={q} className="border border-slate-200/80 rounded-2xl overflow-hidden transition-all bg-white shadow-sm reveal-card">
@@ -550,7 +596,7 @@ export default function LimitedLiabilityPartnership() {
                       <span>{q}</span>
                       <i className={`fas fa-chevron-down text-xs text-slate-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}></i>
                     </button>
-                    <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[500px] border-t border-slate-100' : 'max-h-0'}`}>
+                    <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[1000px] border-t border-slate-100' : 'max-h-0'}`}>
                       <p className="px-6 py-5 text-xs sm:text-sm leading-relaxed text-slate-600 m-0 bg-slate-50/40">{a}</p>
                     </div>
                   </div>

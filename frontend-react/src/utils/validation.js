@@ -13,9 +13,11 @@ export function validateContactForm(form) {
   }
   
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  if (form.email && !emailRegex.test(form.email)) {
+  if (!form.email || !form.email.trim()) {
+    errors.push('Email is required')
+  } else if (!emailRegex.test(form.email)) {
     errors.push('Please enter a valid email address')
   }
-  
+
   return errors
 }

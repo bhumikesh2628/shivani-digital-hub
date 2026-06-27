@@ -39,6 +39,22 @@ export default function PublicLimitedCompany() {
   useScrollReveal('.reveal-card')
 
   const [form, setForm] = useState(init)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const urlName = params.get('name') || ''
+    const urlEmail = params.get('email') || ''
+    const urlPhone = params.get('phone') || ''
+    const urlState = params.get('state') || ''
+    if (urlName || urlEmail || urlPhone || urlState) {
+      setForm(prev => ({
+        ...prev,
+        name: urlName || prev.name,
+        email: urlEmail || prev.email,
+        phone: urlPhone || prev.phone,
+        state: urlState || prev.state
+      }))
+    }
+  }, [])
   const [msg, setMsg] = useState({ text: '', ok: false })
   const [loading, setLoading] = useState(false)
   const [activeTab, setActiveTab] = useState('overview')
@@ -188,9 +204,9 @@ export default function PublicLimitedCompany() {
                   <form onSubmit={onSubmit} className="space-y-3">
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('First Name')}</label>
+                        <label htmlFor="first_name" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('First Name')}</label>
                         <input 
-                          name="name" 
+                          id="first_name" name="name" 
                           value={form.name.split(' ')[0] || ''} 
                           onChange={e => {
                             const val = e.target.value
@@ -206,9 +222,9 @@ export default function PublicLimitedCompany() {
                         />
                       </div>
                       <div>
-                        <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Last Name')}</label>
+                        <label htmlFor="last_name" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Last Name')}</label>
                         <input 
-                          name="lastname" 
+                          id="last_name" name="lastname" 
                           value={form.lastname !== undefined ? form.lastname : (form.name.split(' ').slice(1).join(' ') || '')} 
                           placeholder={t('Last Name')} 
                           required 
@@ -225,13 +241,13 @@ export default function PublicLimitedCompany() {
                     </div>
 
                     <div>
-                      <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Mobile Number')}</label>
+                      <label htmlFor="mobile_number" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Mobile Number')}</label>
                       <div className="flex gap-2">
                         <div className="px-3 py-3 sm:px-2.5 sm:py-2 border border-slate-200 rounded-lg bg-slate-50 flex items-center gap-1 text-slate-500 text-sm font-semibold select-none">
                           <span className="text-[10px] font-bold">IN</span> <span>+91</span>
                         </div>
                         <input 
-                          name="phone" 
+                          id="mobile_number" name="phone" 
                           value={form.phone} 
                           onChange={onChange} 
                           placeholder={t('Enter Phone')} 
@@ -243,9 +259,9 @@ export default function PublicLimitedCompany() {
                     </div>
 
                     <div>
-                      <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Email Address')}</label>
+                      <label htmlFor="email_address" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Email Address')}</label>
                       <input 
-                        name="email" 
+                        id="email_address" name="email" 
                         type="email" 
                         value={form.email} 
                         onChange={onChange} 
@@ -256,9 +272,9 @@ export default function PublicLimitedCompany() {
                     </div>
 
                     <div>
-                      <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Select State')}</label>
+                      <label htmlFor="state_select" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">{t('Select State')}</label>
                       <select 
-                        name="state" 
+                        id="state_select" name="state" 
                         value={form.state} 
                         onChange={onChange} 
                         required 

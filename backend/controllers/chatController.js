@@ -4,6 +4,9 @@ const handleChat = async (req, res) => {
     return res.status(400).json({ error: 'Message is required' });
   }
 
+  // BUG-002: Slice history to prevent token exhaustion and server payload bloat
+  const messageHistory = (history || []).slice(-10);
+
   // Fallback indicator if key is missing so frontend knows to use local QA backup
   if (!process.env.GEMINI_API_KEY) {
     console.warn('GEMINI_API_KEY is not set. Chat widget will use local backup engine.');
@@ -30,7 +33,7 @@ Important constraints:
 - Our phone number is +91 7990187675, email is info@shivanidigitalhub.com, and office address is: 5th Avenue, GF-12, Alwa Naka, GIDC Road, Manjalapur, Vadodara - 390 011.
 
 Conversation history:
-${(history || []).map(h => `${h.sender === 'user' ? 'Client' : 'Assistant'}: ${h.text}`).join('\n')}
+${messageHistory.map(h => `${h.sender === 'user' ? 'Client' : 'Assistant'}: ${h.text}`).join('\n')}
 Client: ${message}
 Assistant:`;
 

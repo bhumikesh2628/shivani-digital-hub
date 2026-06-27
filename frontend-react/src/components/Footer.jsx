@@ -111,7 +111,7 @@ export default function Footer() {
             </div>
 
             {/* Google Map Column */}
-            <div className="lg:col-span-7 w-full h-[240px] rounded-xl overflow-hidden border border-white/10 shadow-md">
+            <div className="lg:col-span-7 w-full h-[240px] rounded-xl overflow-hidden border border-white/10 shadow-md relative group">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14769.094237965417!2d73.18555!3d22.267625!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc5762bcd5325%3A0xfa66221752e7db7!2sSHIVANI%20DIGITAL%20HUB!5e0!3m2!1sen!2sus!4v1782016510564!5m2!1sen!2sus" 
                 width="100%" 
@@ -122,6 +122,14 @@ export default function Footer() {
                 title={t('footerLocation')}
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=SHIVANI+DIGITAL+HUB+Vadodara+Manjalpur"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-4 right-4 bg-white/95 text-slate-800 hover:bg-white text-[11px] font-black px-4 py-2.5 rounded-lg shadow-md border border-slate-200/50 flex items-center gap-1.5 transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline z-10 map-btn"
+              >
+                <span>📍 Open in Google Maps</span>
+              </a>
             </div>
           </div>
         </div>

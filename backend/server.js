@@ -40,7 +40,7 @@ app.use(helmet());
 app.use(cors({
   origin: process.env.ALLOWED_ORIGINS
     ? process.env.ALLOWED_ORIGINS.split(',')
-    : ['http://localhost:5500', 'http://127.0.0.1:5500'],
+    : ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:5500', 'http://127.0.0.1:5500'],
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -35,11 +35,11 @@ export default function FloatingButtons() {
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         aria-label="Back to top"
-        className={`fixed bottom-24 sm:bottom-26 right-4 sm:right-7 z-[9999] w-[40px] sm:w-[50px] h-[40px] sm:h-[50px] rounded-full bg-gradient-to-br from-[#0f4c5c] to-[#1a7a8a] text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-1 text-base sm:text-lg cursor-pointer ${
+        className={`fixed bottom-24 sm:bottom-26 right-4 sm:right-7 z-[9999] w-[40px] sm:w-[50px] h-[40px] sm:h-[50px] rounded-full bg-gradient-to-br from-[#0f4c5c] to-[#1a7a8a] text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_20px_rgba(26,122,138,0.6)] text-base sm:text-lg cursor-pointer ${
           show ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
         }`}
       >
-        <i className="fas fa-chevron-up"></i>
+        <i className="fas fa-arrow-up transition-transform duration-300 group-hover:-translate-y-0.5"></i>
       </button>
     </>
   )
