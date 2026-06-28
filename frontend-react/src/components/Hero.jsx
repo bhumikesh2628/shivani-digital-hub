@@ -19,8 +19,8 @@ export default function Hero() {
 
       {/* Subtle blur highlights */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#1a7a8a]/5 rounded-full filter blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-[#f0c040]/5 rounded-full filter blur-[100px]"></div>
+        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#1a7a8a]/5 rounded-full filter blur-[120px] -translate-x-1/2 -translate-y-1/2 animate-float-orb-1"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-[#f0c040]/5 rounded-full filter blur-[100px] animate-float-orb-2"></div>
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -44,8 +44,26 @@ export default function Hero() {
             {t('heroSub')}
           </p>
 
+          {/* Verified Trust Badge micro-pill */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 mt-6 shadow-sm select-none animate-fade-in">
+            <span className="flex text-amber-400 text-xs gap-0.5">
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+            </span>
+            <span className="text-[10.5px] font-extrabold text-slate-700 uppercase tracking-wider">
+              4.9/5 TrustScore (12,000+ Reviews)
+            </span>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-450 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+          </div>
+
           {/* side-by-side pill buttons */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4.5 mt-10 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4.5 mt-6 w-full sm:w-auto">
             <a 
               href="#contact" 
               onClick={e => scrollTo(e, '#contact')}

@@ -457,3 +457,116 @@ footer a.map-btn:hover span {
   color: #0f172a !important;
 }
 
+/* Icon Micro-Animations on Card Hover */
+.hover-lift:hover i.fa-shield-alt,
+.hover-lift:hover i.fa-user-shield {
+  animation: shieldPulse 1.2s ease-in-out infinite;
+}
+.hover-lift:hover i.fa-rocket {
+  animation: rocketBoost 0.8s ease-in-out infinite;
+}
+.hover-lift:hover i.fa-exchange-alt {
+  animation: exchangeSlide 1s ease-in-out infinite;
+}
+.hover-lift:hover i.fa-infinity {
+  animation: infinityRotate 2s linear infinite;
+}
+.hover-lift:hover i.fa-file-contract,
+.hover-lift:hover i.fa-file-invoice-dollar,
+.hover-lift:hover i.fa-clipboard-check {
+  animation: fileFloat 1.5s ease-in-out infinite;
+}
+.hover-lift:hover i.fa-gavel {
+  animation: gavelHammer 0.8s ease-in-out infinite;
+}
+
+@keyframes shieldPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(224, 176, 48, 0.4)); }
+  50% { transform: scale(1.15); filter: drop-shadow(0 0 8px rgba(224, 176, 48, 0.7)); }
+}
+@keyframes rocketBoost {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.1) skewX(-2deg); }
+}
+@keyframes exchangeSlide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3px); }
+}
+@keyframes infinityRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes fileFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes gavelHammer {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-25deg); }
+}
+
+/* Premium Reflective Card Shine Effect on Hover */
+.hover-lift {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-lift::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 30%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  transition: all 0.6s ease;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0;
+}
+
+.hover-lift:hover::after {
+  left: 140%;
+  opacity: 1;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Homepage Hero background floating accent highlight orbs */
+.animate-float-orb-1 {
+  animation: floatOrb1 25s ease-in-out infinite alternate;
+}
+.animate-float-orb-2 {
+  animation: floatOrb2 30s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb1 {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-35%, -45%) scale(1.15) rotate(180deg);
+  }
+  100% {
+    transform: translate(-55%, -55%) scale(0.9) rotate(360deg);
+  }
+}
+
+@keyframes floatOrb2 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-20px, 30px) scale(1.15) rotate(-90deg);
+  }
+  100% {
+    transform: translate(15px, -20px) scale(0.9) rotate(-180deg);
+  }
+}
+
+

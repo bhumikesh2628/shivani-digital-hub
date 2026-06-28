@@ -59,17 +59,6 @@ export default function Contact() {
     const phoneNumber = '917990187675' // Your phone number
     const message = `New Contact Form Submission:\n\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email || 'Not provided'}\nService: ${form.service}\nMessage: ${form.message || 'Not provided'}`
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
-    
-    try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
-    } catch (err) {
-      console.log('Silent API registration error:', err)
-    }
-    
     // Open WhatsApp with the message
     window.open(whatsappUrl, '_blank')
     

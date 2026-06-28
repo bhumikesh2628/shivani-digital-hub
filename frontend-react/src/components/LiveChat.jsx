@@ -322,24 +322,8 @@ export default function LiveChat() {
         .slice(-6)
         .map(m => ({ sender: m.sender, text: m.text }))
 
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: textToSend, history: textHistory })
-      })
-
-      if (res.ok) {
-        const data = await res.json()
-        if (data.isFallback || data.text === 'GEMINI_API_KEY_MISSING') {
-          botReply = processResponse(textToSend)
-        } else {
-          botReply = data.text
-        }
-      } else {
-        botReply = processResponse(textToSend)
-      }
+      botReply = processResponse(textToSend)
     } catch (err) {
-      console.warn('Chat API failed, falling back to local engine:', err)
       botReply = processResponse(textToSend)
     }
 
@@ -410,15 +394,7 @@ export default function LiveChat() {
       message: `[Live Chat Callback Request]: ${lastUserMsg}`
     }
 
-    try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      })
-    } catch (err) {
-      console.log('Live chat lead sync error:', err)
-    }
+
 
     setIsSubmitting(false)
     setSubmittedMessageId(formId)
@@ -587,6 +563,12 @@ export default function LiveChat() {
             </button>
             <button onClick={() => handleQuickOption('ITR Filing')} className="px-3 py-1.5 bg-white border border-black rounded-full text-[10.5px] font-bold text-black hover:bg-black hover:text-white transition-all cursor-pointer">
               💵 File ITR
+            </button>
+            <button onClick={() => handleQuickOption('What is a DIN?')} className="px-3 py-1.5 bg-white border border-black rounded-full text-[10.5px] font-bold text-black hover:bg-black hover:text-white transition-all cursor-pointer">
+              ❓ What is a DIN?
+            </button>
+            <button onClick={() => handleQuickOption('Am I eligible for GST?')} className="px-3 py-1.5 bg-white border border-black rounded-full text-[10.5px] font-bold text-black hover:bg-black hover:text-white transition-all cursor-pointer">
+              ⚖️ GST Eligibility
             </button>
             <button onClick={() => handleQuickOption('Contact Details')} className="px-3 py-1.5 bg-white border border-black rounded-full text-[10.5px] font-bold text-black hover:bg-black hover:text-white transition-all cursor-pointer">
               📞 Contact Us

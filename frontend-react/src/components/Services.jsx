@@ -18,14 +18,14 @@ function ServiceCard({ image, title, shortDesc, id, link }) {
   return (
     <Link 
       to={href} 
-      className="bg-white rounded-2xl border border-slate-100 shadow-sm flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-[0_20px_45px_rgba(15,76,92,0.06)] hover:-translate-y-1 group block no-underline cursor-pointer hover-lift"
+      className="bg-white rounded-2xl border border-slate-200/80 shadow-sm flex flex-col h-full overflow-hidden transition-all duration-500 hover:shadow-[0_20px_45px_rgba(15,76,92,0.08)] hover:border-[#1a7a8a]/40 hover:-translate-y-1.5 group block no-underline cursor-pointer hover-lift"
     >
-      <div className="w-full h-44 overflow-hidden bg-slate-50 shrink-0 flex items-center justify-center p-6 border-b border-slate-50">
+      <div className="w-full h-44 overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100/50 shrink-0 flex items-center justify-center p-6 border-b border-slate-100">
         <img 
           src={image} 
           alt={t(title)} 
           loading="lazy" 
-          className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${isLogo ? 'object-contain' : 'object-cover'}`} 
+          className={`w-full h-full transition-transform duration-700 ease-out group-hover:scale-108 ${isLogo ? 'object-contain' : 'object-cover'}`} 
         />
       </div>
       <div className="p-6 flex flex-col flex-grow text-left">

@@ -10,6 +10,18 @@ export default function FaqSection({ faqs }) {
     ? faqs.filter(f => f.q.toLowerCase().includes(faqSearch.toLowerCase()) || f.a.toLowerCase().includes(faqSearch.toLowerCase()))
     : faqs
 
+  const highlightText = (text, search) => {
+    if (!search) return text
+    const escapedSearch = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
+    const regex = new RegExp(`(${escapedSearch})`, 'gi')
+    const parts = text.split(regex)
+    return parts.map((part, index) => 
+      regex.test(part) 
+        ? <mark key={index} className="bg-yellow-100 text-yellow-900 px-0.5 rounded-sm font-semibold">{part}</mark>
+        : part
+    )
+  }
+
   return (
     <section className="py-16 sm:py-20 bg-slate-50 border-t border-slate-100" id="faqs">
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
@@ -65,11 +77,11 @@ export default function FaqSection({ faqs }) {
                   onClick={() => setOpenFaq(isOpen ? null : idx)} 
                   className="w-full px-6 py-4.5 text-left font-bold text-slate-800 text-sm sm:text-base flex items-center justify-between hover:bg-slate-50/50 transition-colors cursor-pointer bg-transparent border-none outline-none"
                 >
-                  <span>{q}</span>
+                  <span>{highlightText(q, faqSearch)}</span>
                   <i className={`fas fa-chevron-down text-xs text-slate-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}></i>
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[1000px] border-t border-slate-100' : 'max-h-0'}`}>
-                  <p className="px-6 py-5 text-xs sm:text-sm leading-relaxed text-slate-600 m-0 bg-slate-50/40">{a}</p>
+                  <p className="px-6 py-5 text-xs sm:text-sm leading-relaxed text-slate-600 m-0 bg-slate-50/40">{highlightText(a, faqSearch)}</p>
                 </div>
               </div>
             )

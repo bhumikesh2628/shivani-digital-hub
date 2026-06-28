@@ -1,9 +1,85 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import LeadForm from '../components/LeadForm'
 import FaqSection from '../components/FaqSection'
 import { useLanguage } from '../context/LanguageContext'
+
+function ScrollDrawingLine({ isTimeline }) {
+  const lineRef = useRef(null)
+  const containerRef = useRef(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!lineRef.current || !containerRef.current) return
+      const rect = containerRef.current.getBoundingClientRect()
+      const winHeight = window.innerHeight
+      
+      const startPos = winHeight * 0.8
+      const endPos = winHeight * 0.2
+      const totalDist = startPos - endPos
+      
+      let progress = 0
+      if (rect.top <= startPos) {
+        const currentDist = startPos - rect.top
+        const containerHeight = rect.height
+        progress = Math.min(Math.max(currentDist / (containerHeight + 100), 0), 1)
+      }
+      
+      lineRef.current.style.strokeDashoffset = 100 - (progress * 100)
+    }
+
+    if (lineRef.current) {
+      lineRef.current.style.strokeDasharray = 100
+      lineRef.current.style.strokeDashoffset = 100
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const strokeColor = isTimeline ? '#10b981' : '#00509d'
+  const glowColor = isTimeline ? 'rgba(16, 185, 129, 0.5)' : 'rgba(0, 80, 157, 0.5)'
+
+  return (
+    <div ref={containerRef} className="absolute left-0 top-4 bottom-4 w-[4px] pointer-events-none -translate-x-1/2">
+      <svg className="w-full h-full overflow-visible" viewBox="0 0 4 100" preserveAspectRatio="none">
+        {/* Background dotted line */}
+        <line x1="2" y1="0" x2="2" y2="100" stroke="#e2e8f0" strokeWidth="2" strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
+        
+        {/* Scroll-drawing line */}
+        <path
+          ref={lineRef}
+          d="M 2 0 L 2 100"
+          vectorEffect="non-scaling-stroke"
+          stroke={strokeColor}
+          strokeWidth="3"
+          strokeLinecap="round"
+          fill="none"
+          style={{
+            transition: 'stroke-dashoffset 0.1s ease-out',
+            filter: `drop-shadow(0 0 4px ${glowColor})`
+          }}
+        />
+      </svg>
+    </div>
+  )
+}
+
+const getDocumentTip = (title) => {
+  const t = title.toLowerCase()
+  if (t.includes('pan')) return 'Required to verify tax registration. Copy must be clear and self-attested.'
+  if (t.includes('photograph') || t.includes('photo')) return 'Recent passport size photo with a light background.'
+  if (t.includes('identity') || t.includes('aadhaar') || t.includes('proof')) return 'Promoters Aadhaar card or passport to verify personal identity.'
+  if (t.includes('address proof') || t.includes('statement') || t.includes('bill')) return 'Must not be older than 2 months and show the exact name.'
+  if (t.includes('registered office') || t.includes('utility')) return 'Electricity/gas bill of the business address (under 2 months old).'
+  if (t.includes('noc') || t.includes('objection')) return 'Signed written consent from property owner giving rights to use address.'
+  if (t.includes('rent') || t.includes('deed')) return 'Registered lease agreement copy confirming commercial tenancy.'
+  return 'Must be a clear scanned copy of the original document.'
+}
+
+
 
 export default function ServicePageLayout({
   title,
@@ -28,15 +104,15 @@ export default function ServicePageLayout({
   
   guidelinesBadge,
   guidelinesTitle,
-  guidelines, // Array of {icon, title, desc} (optional)
+  guidelines,
   
   processSubtitle,
   processTitle,
-  processSteps, // Array of {badge, icon, title, bullets}
+  processSteps,
   
   timelineSubtitle,
   timelineTitle,
-  timelineSteps, // Array of {badge, icon, title, bullets}
+  timelineSteps,
   
   faqs
 }) {
@@ -56,6 +132,70 @@ export default function ServicePageLayout({
       })
     }
   }
+
+  // Dynamic JSON-LD Schema injection for SEO structured data
+  useEffect(() => {
+    // Generate Service Schema
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": title,
+      "description": heroDesc && heroDesc.length > 0 ? heroDesc[0] : '',
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Shivani Digital Hub",
+        "telephone": "+917990187675",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "5th Avenue, GF-12, Alwa Naka, GIDC Road, Manjalapur",
+          "addressLocality": "Vadodara",
+          "addressRegion": "Gujarat",
+          "postalCode": "390011",
+          "addressCountry": "IN"
+        }
+      }
+    }
+
+    const script1 = document.createElement('script')
+    script1.type = 'application/ld+json'
+    script1.id = 'ld-json-service'
+    script1.innerHTML = JSON.stringify(serviceSchema)
+    document.head.appendChild(script1)
+
+    // Generate FAQ Page Schema if faqs list is present
+    let script2 = null
+    if (faqs && faqs.length > 0) {
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(f => ({
+          "@type": "Question",
+          "name": f.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.a
+          }
+        }))
+      }
+      script2 = document.createElement('script')
+      script2.type = 'application/ld+json'
+      script2.id = 'ld-json-faqs'
+      script2.innerHTML = JSON.stringify(faqSchema)
+      document.head.appendChild(script2)
+    }
+
+    return () => {
+      const s1 = document.getElementById('ld-json-service')
+      if (s1) s1.remove()
+      const s2 = document.getElementById('ld-json-faqs')
+      if (s2) s2.remove()
+    }
+  }, [title, heroDesc, faqs])
+
+  // Set document title dynamically for SEO and browser tab display
+  useEffect(() => {
+    document.title = `${title} | Shivani Digital Hub`
+  }, [title])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -129,9 +269,27 @@ export default function ServicePageLayout({
                   Home <span className="mx-1 text-slate-400">»</span> {serviceName}
                 </nav>
 
-                <h1 className="text-2xl sm:text-3.5xl lg:text-[34px] font-extrabold text-slate-900 tracking-tight leading-[1.2] mb-4 font-poppins">
+                <h1 className="text-2xl sm:text-3.5xl lg:text-[34px] font-extrabold text-slate-900 tracking-tight leading-[1.2] mb-3.5 font-poppins">
                   {title}
                 </h1>
+
+                {/* Google Reviews Trust Rating Badge */}
+                <div className="flex items-center gap-1.5 mb-4 select-none animate-fade-in">
+                  <span className="flex text-amber-400 text-xs sm:text-[13px] gap-0.5">
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                  </span>
+                  <span className="text-[11px] sm:text-xs font-bold text-slate-650">
+                    4.9/5 by 12,000+ businesses (Google Reviews)
+                  </span>
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                </div>
 
                 {heroDesc && heroDesc.map((desc, idx) => (
                   <p key={idx} className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-2xl mb-4 font-medium">
@@ -172,7 +330,10 @@ export default function ServicePageLayout({
         </section>
 
         {/* STICKY SECONDARY NAV BAR */}
-        <div className={`sticky z-[990] bg-white border-b border-slate-200 shadow-sm hidden md:block select-none transition-all duration-300 ${scrolled ? 'top-[56px]' : 'top-[74px]'}`}>
+        <div 
+          className={`sticky z-[990] bg-white/80 border-b border-slate-200 shadow-sm hidden md:block select-none transition-all duration-300 ${scrolled ? 'top-[56px]' : 'top-[74px]'}`}
+          style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}
+        >
           <div className="w-full max-w-7xl mx-auto px-8 flex items-center justify-center relative h-[54px]">
             <ul className="flex items-center justify-center gap-6 h-full m-0 p-0 list-none">
               <li>
@@ -276,9 +437,17 @@ export default function ServicePageLayout({
                   <div className="w-11 h-11 rounded-xl bg-orange-50 text-[#d97706] border border-orange-100 flex items-center justify-center text-lg shrink-0">
                     <i className={`fas ${icon}`}></i>
                   </div>
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#d97706] mb-1.5">{title}</h4>
-                    <p className="text-slate-600 text-[13px] leading-relaxed">{desc}</p>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-1.5 mb-1.5">
+                      <h4 className="text-[15px] font-bold text-[#d97706] m-0">{title}</h4>
+                      <div className="group relative cursor-help">
+                        <i className="fas fa-info-circle text-[11px] text-slate-400 hover:text-slate-600"></i>
+                        <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-slate-800 text-white text-[10px] p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 text-center font-normal leading-normal select-none">
+                          {t(getDocumentTip(title))}
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-slate-600 text-[13px] leading-relaxed m-0">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -329,7 +498,8 @@ export default function ServicePageLayout({
                   {processTitle}
                 </h3>
 
-                <div className="relative space-y-10 pl-4 border-l-2 border-sky-100/70 ml-2">
+                <div className="relative space-y-10 pl-4 ml-2">
+                  <ScrollDrawingLine isTimeline={false} />
                   {processSteps && processSteps.map((step, idx) => (
                     <div key={idx} className="relative">
                       {renderTimelineBadge(step, false)}
@@ -353,7 +523,8 @@ export default function ServicePageLayout({
                   {timelineTitle}
                 </h3>
 
-                <div className="relative space-y-10 pl-4 border-l-2 border-emerald-100/70 ml-2">
+                <div className="relative space-y-10 pl-4 ml-2">
+                  <ScrollDrawingLine isTimeline={true} />
                   {timelineSteps && timelineSteps.map((step, idx) => (
                     <div key={idx} className="relative">
                       {renderTimelineBadge(step, true)}

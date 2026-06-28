@@ -60,17 +60,6 @@ export default function LeadForm({ serviceName, title, buttonLabel, plans }) {
     const phoneNumber = '917990187675'
     const message = `${serviceName} Inquiry:\n\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nState: ${form.state}${planText}`
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
-    
-    try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, service: logServiceName }),
-      })
-    } catch {
-      // Silent error fallback
-    }
-    
     window.open(whatsappUrl, '_blank')
     setMsg({ text: t('✓ Opening WhatsApp to send your message...'), ok: true })
     
