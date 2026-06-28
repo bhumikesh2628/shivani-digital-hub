@@ -54,6 +54,10 @@ function PageWrapper({ children }) {
 }
 
 function Home() {
+  useEffect(() => {
+    document.title = "Shivani Digital Hub | Aadhaar Center, GST & Digital Services"
+  }, [])
+
   return (
     <>
       <Header />
